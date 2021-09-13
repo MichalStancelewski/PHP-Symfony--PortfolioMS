@@ -1,0 +1,23 @@
+.container {
+    text-align: center;
+    padding: 50px 5%;
+    color: #eaeaea;"
+}
+
+a {
+    color: #5eb5e0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #3c84d0;
+}
+
+table {
+    margin-top: 22px;
+}
+
+.table-description {
+    font-size: 10px;
+}

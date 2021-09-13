@@ -12,13 +12,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
+        <link rel="stylesheet" href="/css/style.css">
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
-
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
+        <link rel="shortcut icon" type="image/svg+xml" href="https://symfony.com/favicons/favicon.svg">
+        <link rel="alternate icon" type="image/png" sizes="16x16" href="https://symfony.com/favicons/favicon-16x16.png">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -44,7 +46,7 @@
                     <ul class="navbar-nav ">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <li class="nav-item float-end">
-                                <a class="nav-link" href="{{ path('admin') }}"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                                <a class="nav-link" href="{{ path('admin.index') }}"><i class="fa fa-cog" aria-hidden="true"></i></a>
                             </li>
                             <li class="nav-item float-end">
                                 <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>

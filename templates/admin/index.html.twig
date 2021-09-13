@@ -1,20 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
-
+{% block title %}Admin - manage portfolio database{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/admin.css">
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="container">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/APPS/PortfolioMS/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/APPS/PortfolioMS/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="row">
+            <div class="col">
+                <h2>Projects</h2>
+                <a href="{{ path('admin.create_project') }}">Create new <i class="fas fa-plus-circle"></i></a>
+{#                TODO lista    #}
+            </div>
+            <div class="col">
+                <h2>Technologies</h2>
+                <a href="{{ path('admin.create_technology') }}">Create new <i class="fas fa-plus-circle"></i></a>
+                <table  class="table table-dark table-striped">
+                    <tbody>
+                    {% for technology in technologies %}
+                        <tr>
+                            <td><img src="/uploads/{{ technology.image }}" height="30px"/></td>
+                            <td class="table-name">{{ technology.name }}</td>
+                            <td class="table-description">{{ technology.description }}</td>
+                            <td>
+                                <a href="#"><i class="far fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href="#"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
