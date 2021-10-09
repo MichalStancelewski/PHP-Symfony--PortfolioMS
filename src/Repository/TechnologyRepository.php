@@ -12,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Technology[]    findAll()
  * @method Technology[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TechnologiesRepository extends ServiceEntityRepository
+class TechnologyRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
