@@ -7,6 +7,7 @@ use App\Entity\Technology;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -17,7 +18,10 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        $routeBuilder = $this->get(AdminUrlGenerator::class);
+        $url = $routeBuilder->setController(ProjectCrudController::class)->generateUrl();
+
+        return $this->redirect($url);
     }
 
     public function configureDashboard(): Dashboard
@@ -29,7 +33,6 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToRoute('Home', 'fa fa-home', 'homepage');
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-cog');
         yield MenuItem::linkToCrud('Projects', 'fas fa-list', Project::class);
         yield MenuItem::linkToCrud('Technologies', 'fas fa-list', Technology::class);
     }

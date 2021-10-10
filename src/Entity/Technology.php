@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\TechnologiesRepository;
+use App\Repository\TechnologyRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TechnologiesRepository::class)
+ * @ORM\Entity(repositoryClass=TechnologyRepository::class)
  */
 class Technology
 {
