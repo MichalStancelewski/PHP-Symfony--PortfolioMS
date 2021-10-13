@@ -14,6 +14,7 @@ h1 {
     font-size: 22px;
     padding: 0;
     margin: 0;
+    color: #a68b1e;
 }
 
 .nav-item{
@@ -23,6 +24,8 @@ h1 {
 .dropdown-item.bg-dark{
     color: #ffffff8c;
     transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .dropdown-item.bg-dark:hover{
@@ -31,4 +34,33 @@ h1 {
 
 .nav-link.text-danger:hover{
     text-decoration: underline;
+}
+
+.page-description{
+    font-size: 0.8em;
+    margin: 2.5em 0.5em 3.5em 0.5em;
+}
+
+.admin-big-button i{
+    margin-right: 10px;
+}
+
+.admin-big-button{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 1em 2em;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.7em;
+    transition: 0.3s;
+    background-color: #a68b1e;
+    color: #ffffff;
+}
+
+.admin-big-button:hover{
+    background-color: #b5a525;
+    color: #ffffff;
 }
