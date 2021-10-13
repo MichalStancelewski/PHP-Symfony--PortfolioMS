@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+    font-size: 22px;
+}
+
+.login-container {
+    margin: 5em auto;
+    max-width: 800px;
+    width: 85%;
+    font: 18px/1.5 sans-serif;
+}
+
+button {
+    margin-top: 20px;
+}
+
+.go-back-link{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.go-back-link a{
+    color: #0f766e;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.go-back-link a:hover{
+    color: #17aba0;
+}
