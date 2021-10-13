@@ -12,6 +12,7 @@ h1 {
 
 button {
     margin-top: 20px;
+    padding: 6px 42px 6px 42px !important;
 }
 
 .go-back-link{
