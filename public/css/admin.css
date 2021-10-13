@@ -15,3 +15,20 @@ h1 {
     padding: 0;
     margin: 0;
 }
+
+.nav-item{
+    font-size: 14px;
+}
+
+.dropdown-item.bg-dark{
+    color: #ffffff8c;
+    transition: 0.3s;
+}
+
+.dropdown-item.bg-dark:hover{
+    color: #ffffffbf;
+}
+
+.nav-link.text-danger:hover{
+    text-decoration: underline;
+}
