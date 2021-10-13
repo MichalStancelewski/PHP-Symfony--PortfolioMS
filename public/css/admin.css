@@ -1,3 +1,7 @@
+td, th {
+    color: #ffffff;
+}
+
 .admin-page-container {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -17,35 +21,35 @@ h1 {
     color: #a68b1e;
 }
 
-.nav-item{
+.nav-item {
     font-size: 14px;
 }
 
-.dropdown-item.bg-dark{
+.dropdown-item.bg-dark {
     color: #ffffff8c;
     transition: 0.3s;
     text-transform: uppercase;
     font-size: 13px;
 }
 
-.dropdown-item.bg-dark:hover{
+.dropdown-item.bg-dark:hover {
     color: #ffffffbf;
 }
 
-.nav-link.text-danger:hover{
+.nav-link.text-danger:hover {
     text-decoration: underline;
 }
 
-.page-description{
+.page-description {
     font-size: 0.8em;
     margin: 2.5em 0.5em 3.5em 0.5em;
 }
 
-.admin-big-button i{
+.admin-big-button i {
     margin-right: 10px;
 }
 
-.admin-big-button{
+.admin-big-button {
     display: block;
     text-decoration: none;
     text-align: center;
@@ -60,7 +64,7 @@ h1 {
     color: #ffffff;
 }
 
-.admin-big-button:hover{
+.admin-big-button:hover {
     background-color: #b5a525;
     color: #ffffff;
 }
