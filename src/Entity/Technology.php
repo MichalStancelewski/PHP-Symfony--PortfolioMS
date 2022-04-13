@@ -18,7 +18,7 @@ class Technology
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 500, nullable: true)]
+    #[ORM\Column(type: 'text', nullable: true)]
     private $description;
 
     #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'technologies')]

@@ -18,7 +18,7 @@ class Project
     #[ORM\Column(type: 'string', length: 500)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 1500, nullable: true)]
+    #[ORM\Column(type: 'text', nullable: true)]
     private $description;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
