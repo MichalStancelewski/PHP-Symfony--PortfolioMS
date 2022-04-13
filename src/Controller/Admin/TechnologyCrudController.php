@@ -30,13 +30,12 @@ class TechnologyCrudController extends AbstractCrudController
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
-            ->add(EntityFilter::new('project'));
+            ->add(EntityFilter::new('projects'));
     }
 
     public function configureFields(string $pageName): iterable
     {
         yield TextField::new('name');
-        yield AssociationField::new('projects');
         yield TextareaField::new('description')
             ->hideOnIndex();
     }
