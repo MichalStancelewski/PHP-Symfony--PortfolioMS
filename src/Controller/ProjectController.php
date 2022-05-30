@@ -12,19 +12,26 @@ use Twig\Environment;
 
 class ProjectController extends AbstractController
 {
-    #[Route('/', name: 'homepage')]
-    public function index(Environment $twig, ProjectRepository $projectRepository, TechnologyRepository $technologyRepository): Response
+    private $twig;
+
+    public function __construct(Environment $twig)
     {
-        return new Response($twig->render('project/index.html.twig', [
+        $this->twig = $twig;
+    }
+
+    #[Route('/', name: 'homepage')]
+    public function index(ProjectRepository $projectRepository, TechnologyRepository $technologyRepository): Response
+    {
+        return new Response($this->twig->render('project/index.html.twig', [
             'projects' => $projectRepository->findAll(),
             'technologies' => $technologyRepository->findAll(),
         ]));
     }
 
     #[Route('/project/{id}', name: 'project')]
-    public function single(Environment $twig, Project $project, TechnologyRepository $technologyRepository): Response
+    public function single(Project $project, TechnologyRepository $technologyRepository): Response
     {
-        return new Response($twig->render('project/single.html.twig', [
+        return new Response($this->twig->render('project/single.html.twig', [
             'project' => $project,
         ]));
     }
