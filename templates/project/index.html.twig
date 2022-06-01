@@ -11,6 +11,11 @@
         <p>{{ project }} <a href="{{ path('project', { slug: project.slug }) }}">View</a></p>
     {% endfor %}
 
+    {% for project in projects %}
+        <li><a class="navigation-element" href="{{ path('project', { slug: project.slug }) }}">{{ project }}</a>
+        </li>
+    {% endfor %}
+
     <h2>List of used technologies</h2>
     {% for technology in technologies %}
         <p>{{ technology }}</p>

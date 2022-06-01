@@ -29,17 +29,6 @@ class ProjectController extends AbstractController
         ]));
     }
 
-    #[Route('/project_header', name: 'project_header')]
-    public function conferenceHeader(ProjectRepository $projectRepository): Response
-    {
-        $response = new Response($this->twig->render('project/header.html.twig', [
-            'projects' => $projectRepository->findAll(),
-        ]));
-        $response->setSharedMaxAge(3600);
-
-        return $response;
-    }
-
     #[Route('/project/{slug}/', name: 'project')]
     public function single(Project $project, TechnologyRepository $technologyRepository): Response
     {

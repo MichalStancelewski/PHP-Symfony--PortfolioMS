@@ -49,6 +49,23 @@ a {
     border-right: 2px solid $color-background-secondary;
 }
 
+#sidebar #sidebar-footer{
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    bottom: 35px;
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 0.7px;
+}
+
+.sidebar-header a{
+    color: $color-text-lighter;
+    font-size: 28px;
+    font-weight: 700;
+}
+
 @media only screen and (max-width: 767px) {
     .wrapper{
         display: block;
@@ -64,5 +81,9 @@ a {
         padding: 15px;
         border-right: none;
         border-bottom: 2px solid $color-background-secondary;
+    }
+    #sidebar #sidebar-footer{
+        position: relative;
+        bottom: auto;
     }
 }

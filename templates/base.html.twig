@@ -26,7 +26,7 @@
 <body>
 <div class="wrapper">
     <header>
-        {{ render_esi(path('project_header')) }}
+        {% include '/project/sidebar.html.twig' %}
     </header>
     <div id="content">
         {% block body %}{% endblock %}

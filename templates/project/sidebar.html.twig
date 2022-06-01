@@ -1,0 +1,18 @@
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <p><a href="{{ path('homepage') }}">My Projects</a></p>
+    </div>
+    <div class="sidebar-menu-main">
+        <p>Check my projects made for educational and hobby purpose.</p>
+        <ul class="list-unstyled components">
+            {% set currentPage = app.request.attributes.get('_route') %}
+            <li><a href="{{ path('homepage') }}" class="menu-item{% if currentPage == 'homepage' %} active{% endif %}">All projects</a></li>
+            <li><a href="#" class="menu-item">Used technologies</a></li>
+            <li><a href="#" class="menu-item">More info</a></li>
+
+        </ul>
+    </div>
+    <div id="sidebar-footer">
+        &copy; Michał Stancelewski
+    </div>
+</nav>
