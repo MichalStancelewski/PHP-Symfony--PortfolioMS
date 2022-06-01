@@ -6,6 +6,7 @@ use App\Entity\Project;
 use App\Repository\ProjectRepository;
 use App\Repository\TechnologyRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
@@ -28,12 +29,26 @@ class ProjectController extends AbstractController
         ]));
     }
 
+    #[Route('/project_header', name: 'project_header')]
+    public function conferenceHeader(ProjectRepository $projectRepository): Response
+    {
+        return new Response($this->twig->render('project/header.html.twig', [
+            'conferences' => $projectRepository->findAll(),
+        ]));
+    }
+
     #[Route('/project/{slug}/', name: 'project')]
     public function single(Project $project, TechnologyRepository $technologyRepository): Response
     {
         return new Response($this->twig->render('project/single.html.twig', [
             'project' => $project,
         ]));
+    }
+
+    #[Route('/project/', name: 'projects-redirection')]
+    public function redirectToHomepage(): RedirectResponse
+    {
+        return $this->redirectToRoute('homepage', [], 301);
     }
 
 }
