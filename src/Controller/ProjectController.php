@@ -32,9 +32,12 @@ class ProjectController extends AbstractController
     #[Route('/project_header', name: 'project_header')]
     public function conferenceHeader(ProjectRepository $projectRepository): Response
     {
-        return new Response($this->twig->render('project/header.html.twig', [
-            'conferences' => $projectRepository->findAll(),
+        $response = new Response($this->twig->render('project/header.html.twig', [
+            'projects' => $projectRepository->findAll(),
         ]));
+        $response->setSharedMaxAge(3600);
+
+        return $response;
     }
 
     #[Route('/project/{slug}/', name: 'project')]
@@ -45,7 +48,7 @@ class ProjectController extends AbstractController
         ]));
     }
 
-    #[Route('/project/', name: 'projects-redirection')]
+    #[Route('/project/', name: 'project-redirection')]
     public function redirectToHomepage(): RedirectResponse
     {
         return $this->redirectToRoute('homepage', [], 301);
