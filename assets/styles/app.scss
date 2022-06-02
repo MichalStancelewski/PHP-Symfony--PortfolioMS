@@ -33,7 +33,7 @@ a {
 
 #content {
     margin-left: 250px;
-    padding: 35px;
+    padding: 25px;
 }
 
 #sidebar {
@@ -42,7 +42,7 @@ a {
     top: 0;
     left: 0;
     height: 100vh;
-    padding: 35px;
+    padding: 25px;
     z-index: 999;
     background-color: $color-background-medium;
     color: $color-text-darker;
@@ -53,17 +53,42 @@ a {
     position: absolute;
     margin: 0 auto;
     left: 0;
-    bottom: 35px;
+    bottom: 25px;
     width: 100%;
     font-size: 11px;
     text-align: center;
     letter-spacing: 0.7px;
 }
 
+.sidebar-menu-main,
+.sidebar-menu-main ul{
+    margin-top: 25px;
+}
+
 .sidebar-header a{
-    color: $color-text-lighter;
+    color: $color-text-darker;
     font-size: 28px;
     font-weight: 700;
+}
+
+.sidebar-menu-main .menu-item i{
+    margin-right: 8px;
+}
+
+.sidebar-menu-main .menu-item{
+    display: block;
+    background-color: $color-alfa;
+    color:$color-text-darker;
+    border-radius: $border-radius;
+    padding: 10px 13px;
+    margin-bottom: 10px;
+}
+
+.sidebar-menu-main .menu-item.active,
+.sidebar-menu-main .menu-item:hover{
+    background-color: $color-accent;
+    color:$color-text-lighter;
+    box-shadow: 0 0 8px $color-background-darker;
 }
 
 @media only screen and (max-width: 767px) {
@@ -85,5 +110,9 @@ a {
     #sidebar #sidebar-footer{
         position: relative;
         bottom: auto;
+    }
+
+    .sidebar-header, .sidebar-menu-main p{
+        text-align: center;
     }
 }

@@ -6,10 +6,15 @@
         <p>Check my projects made for educational and hobby purpose.</p>
         <ul class="list-unstyled components">
             {% set currentPage = app.request.attributes.get('_route') %}
-            <li><a href="{{ path('homepage') }}" class="menu-item{% if currentPage == 'homepage' %} active{% endif %}">All projects</a></li>
-            <li><a href="#" class="menu-item">Used technologies</a></li>
-            <li><a href="#" class="menu-item">More info</a></li>
-
+            <li><a href="{{ path('homepage') }}" class="menu-item{% if currentPage == 'homepage' %} active{% endif %}">
+                    <i class="fa-solid fa-laptop-code"></i> All projects
+                </a></li>
+            <li><a href="#" class="menu-item">
+                    <i class="fa-solid fa-code"></i> Used technologies
+                </a></li>
+            <li><a href="#" class="menu-item">
+                    <i class="fa-solid fa-question"></i> More info
+                </a></li>
         </ul>
     </div>
     <div id="sidebar-footer">
