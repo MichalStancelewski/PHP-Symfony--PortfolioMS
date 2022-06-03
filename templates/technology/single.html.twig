@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Technology details - {{ technology }}{% endblock %}
+
+{% block body %}
+    <h1>{{ technology }}</h1>
+
+    <div><a href="{{ path('technologies_index') }}">Go back</a></div>
+
+    <img src="/uploads/tech/{{ technology.image }}" alt="{{ technology }}" height=200 width=auto />
+
+    <p>{{ technology.description }}</p>
+{% endblock %}
