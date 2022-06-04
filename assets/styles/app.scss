@@ -92,7 +92,8 @@ a {
   box-shadow: $box-shadow-dark;
 }
 
-.archive .single-block {
+.archive .single-block,
+.aboutme-box {
   display: block;
   margin-bottom: 20px;
   padding: 20px;
@@ -135,7 +136,34 @@ a {
   color: $color-text-medium;
 }
 
+.contact-box {
+  display: block;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+  background-color: $color-alfa;
+  border-radius: $border-radius;
+  border: 2px solid $color-background-lighter;
+  color: $color-text-lighter;
+  font-size: 16px;
+  font-weight: 700;
+}
 
+.contact-box a{
+  color: $color-accent;
+}
+
+.contact-box a:hover{
+  color: $color-accent-darker;
+}
+
+.contact-box i {
+  margin-right: 6px;
+}
+
+.contact-box p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 .button{
   display: block;
@@ -166,6 +194,33 @@ a {
   color: $color-text-lighter;
   border: 2px solid $color-accent;
   box-shadow: $box-shadow-dark;
+}
+
+.aboutme-text {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: justify;
+  color: $color-text-darker;
+}
+
+.aboutme-text b{
+  font-size: 15px;
+  font-weight: 700;
+  color: $color-text-lighter;
+}
+
+.contact-image {
+  text-align: center;
+}
+
+.contact-image img {
+  max-height: 172px;
+  margin: 0 auto 34px auto;
+  border-radius: $border-radius;
+}
+
+img.shadow {
+  filter: $drop-shadow-accent;
 }
 
 @media only screen and (max-width: 767px) {
