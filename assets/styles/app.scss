@@ -108,6 +108,12 @@ a {
   box-shadow: $box-shadow-dark;
 }
 
+.archive img.block-image{
+  max-height: 50px;
+  width: auto;
+  padding: 5px;
+}
+
 .archive .single-block p{
   margin: 0;
 }
@@ -115,6 +121,21 @@ a {
 .archive .single-block .container.inside-block{
   padding: 0;
 }
+
+.archive p.block-count{
+  margin-top: 3px;
+  font-size: 12px;
+  color: $color-text-darker;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+}
+
+.archive .block-count b{
+  font-weight: 700;
+  color: $color-text-medium;
+}
+
+
 
 .button{
   display: block;

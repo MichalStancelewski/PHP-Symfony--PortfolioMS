@@ -15,17 +15,16 @@
                     <a class="single-block" href="{{ path('technologies_single', { slug: technology.slug }) }}">
                         <div class="container inside-block">
                             <div class="row">
-                                <div class="col-2"><img src="/uploads/tech/{{ technology.image }}"
-                                                        alt="{{ technology }}" class="block-image" height=44
-                                                        width=auto/></div>
-                                <div class="col-10">
+                                <div class="col-3"><img src="/uploads/tech/{{ technology.image }}"
+                                                        alt="{{ technology }}" class="block-image" /></div>
+                                <div class="col-9">
                                     <p class="block-name">
                                         {{ technology.name }}
                                     </p>
                                     <p class="block-count">
                                         {% for key,value in techonologiesWithProjectsCounted %}
                                             {% if key == technology.id %}
-                                                Used id {{ value }} projects.
+                                                Used in <b>{{ value }}</b> project{% if value != 1 %}s{% endif %}.
                                             {% endif %}
                                         {% endfor %}
                                     </p>
