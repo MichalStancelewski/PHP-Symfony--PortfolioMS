@@ -2,118 +2,142 @@
 @import './variables';
 
 body {
-    background-color: $color-background-medium;
-    font-family: $font-family-text;
-    color: $color-text-lighter;
+  background-color: $color-background-medium;
+  font-family: $font-family-text;
+  color: $color-text-lighter;
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: $font-family-title-primary;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-title-primary;
 }
 
 a {
-    transition: all 0.25s;
-    text-decoration: none;
+  transition: all 0.25s;
+  text-decoration: none;
 }
 
 ::-moz-selection {
-    color: $color-text-medium;
-    background: $color-background-darker;
+  color: $color-text-medium;
+  background: $color-background-darker;
 }
 
 ::selection {
-    color: $color-text-medium;
-    background: $color-background-darker;
+  color: $color-text-medium;
+  background: $color-background-darker;
 }
 
 .wrapper {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 #content {
-    margin-left: 250px;
-    padding: 25px;
-    width: 100%;
+  margin-left: 250px;
+  padding: 25px;
+  width: 100%;
 }
 
 #sidebar {
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    padding: 25px;
-    z-index: 999;
-    background-color: $color-background-medium;
-    color: $color-text-darker;
-    border-right: 2px solid $color-background-secondary;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 25px;
+  z-index: 999;
+  background-color: $color-background-medium;
+  color: $color-text-darker;
+  border-right: 2px solid $color-background-secondary;
 }
 
-#sidebar #sidebar-footer{
-    position: absolute;
-    margin: 0 auto;
-    left: 0;
-    bottom: 25px;
-    width: 100%;
-    font-size: 11px;
-    text-align: center;
-    letter-spacing: 0.7px;
+#sidebar #sidebar-footer {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  bottom: 25px;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0.7px;
 }
 
 .sidebar-menu-main,
-.sidebar-menu-main ul{
-    margin-top: 25px;
+.sidebar-menu-main ul {
+  margin-top: 25px;
 }
 
-.sidebar-header a{
-    color: $color-text-darker;
-    font-size: 28px;
-    font-weight: 700;
+.sidebar-header a {
+  color: $color-text-darker;
+  font-size: 28px;
+  font-weight: 700;
 }
 
-.sidebar-menu-main .menu-item i{
-    margin-right: 8px;
+.sidebar-menu-main .menu-item i {
+  margin-right: 8px;
 }
 
-.sidebar-menu-main .menu-item{
-    display: block;
-    background-color: $color-alfa;
-    color:$color-text-darker;
-    border-radius: $border-radius;
-    padding: 10px 13px;
-    margin-bottom: 10px;
+.sidebar-menu-main .menu-item {
+  display: block;
+  background-color: $color-alfa;
+  color: $color-text-darker;
+  border-radius: $border-radius;
+  padding: 10px 13px;
+  margin-bottom: 10px;
 }
 
 .sidebar-menu-main .menu-item.active,
-.sidebar-menu-main .menu-item:hover{
-    background-color: $color-accent;
-    color:$color-text-lighter;
-    box-shadow: 0 0 8px $color-background-darker;
+.sidebar-menu-main .menu-item:hover {
+  background-color: $color-accent;
+  color: $color-text-lighter;
+  box-shadow: $box-shadow-dark;
+}
+
+.archive .single-block {
+  display: block;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: $color-background-lighter;
+  border-radius: $border-radius;
+  color: $color-text-lighter;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.archive .single-block:hover {
+  background-color: $color-accent;
+  box-shadow: $box-shadow-dark;
+}
+
+.archive .single-block p{
+  margin: 0;
+}
+
+.archive .single-block .container.inside-block{
+  padding: 0;
 }
 
 @media only screen and (max-width: 767px) {
-    .wrapper{
-        display: block;
-    }
-    #content {
-        margin-left: 0;
-        padding: 15px;
-    }
-    #sidebar {
-        width: 100vw;
-        position: relative;
-        height: auto;
-        padding: 15px;
-        border-right: none;
-        border-bottom: 2px solid $color-background-secondary;
-    }
-    #sidebar #sidebar-footer{
-        position: relative;
-        bottom: auto;
-    }
+  .wrapper {
+    display: block;
+  }
+  #content {
+    margin-left: 0;
+    padding: 15px;
+  }
+  #sidebar {
+    width: 100vw;
+    position: relative;
+    height: auto;
+    padding: 15px;
+    border-right: none;
+    border-bottom: 2px solid $color-background-secondary;
+  }
+  #sidebar #sidebar-footer {
+    position: relative;
+    bottom: auto;
+  }
 
-    .sidebar-header, .sidebar-menu-main p{
-        text-align: center;
-    }
+  .sidebar-header, .sidebar-menu-main p {
+    text-align: center;
+  }
 }
