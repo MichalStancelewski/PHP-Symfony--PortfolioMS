@@ -12,7 +12,7 @@
             <li><a href="{{ path('technologies_index') }}" class="menu-item{% if currentPage == 'technologies_index' or currentPage == 'technologies_single' %} active{% endif %}">
                     <i class="fa-solid fa-code"></i> Used technologies
                 </a></li>
-            <li><a href="#" class="menu-item">
+            <li><a href="{{ path('more_info') }}" class="menu-item{% if currentPage == 'more_info' %} active{% endif %}">
                     <i class="fa-solid fa-question"></i> More info
                 </a></li>
         </ul>
