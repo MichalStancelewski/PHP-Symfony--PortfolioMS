@@ -5,7 +5,7 @@
 {% block body %}
     <h1>{{ technology }}</h1>
 
-    <div><a href="{{ path('technologies_index') }}">Go back</a></div>
+    <div><a href="{{ path('technologies_index') }}" class="button go-back"><i class="fa-solid fa-left-long left"></i> Go back</a></div>
 
     <img src="/uploads/tech/{{ technology.image }}" alt="{{ technology }}" height=200 width=auto />
 
