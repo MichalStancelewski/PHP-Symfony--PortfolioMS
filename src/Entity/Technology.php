@@ -78,6 +78,12 @@ class Technology
         return $this->projects;
     }
 
+    public function countProjects(): ?int
+    {
+        $collection = $this->projects;
+        return $collection->count();
+    }
+
     public function addProject(Project $project): self
     {
         if (!$this->projects->contains($project)) {

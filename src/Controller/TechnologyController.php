@@ -21,9 +21,19 @@ class TechnologyController extends AbstractController
     #[Route('/technologies/', name: 'technologies_index')]
     public function index(TechnologyRepository $technologyRepository): Response
     {
+        $technologiesCollection = $technologyRepository->findAll();
+        $technologiesWithProjectsCounted = array();
+        if (count($technologiesCollection) > 0) {
+            foreach ($technologiesCollection as $technology) {
+                $technologiesWithProjectsCounted[$technology->getId()] = $technology->countProjects();
+            }
+        }
+
         return new Response($this->twig->render('technology/index.html.twig', [
-            'technologies' => $technologyRepository->findAll(),
+            'technologies' => $technologiesCollection,
+            'techonologiesWithProjectsCounted' => $technologiesWithProjectsCounted,
         ]));
+
     }
 
     #[Route('/technologies/{slug}/', name: 'technologies_single')]

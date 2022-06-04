@@ -8,7 +8,6 @@
 
     <h2>List of used technologies</h2>
 
-
     <div class="container archive">
         <div class="row">
             {% for technology in technologies %}
@@ -16,8 +15,21 @@
                     <a class="single-block" href="{{ path('technologies_single', { slug: technology.slug }) }}">
                         <div class="container inside-block">
                             <div class="row">
-                                <div class="col-2"><img src="/uploads/tech/{{ technology.image }}" alt="{{ technology }}" class="block-image" height=24 width=auto/></div>
-                                <div class="col-10"><p class="block-name">{{ technology.name }}</p></div>
+                                <div class="col-2"><img src="/uploads/tech/{{ technology.image }}"
+                                                        alt="{{ technology }}" class="block-image" height=44
+                                                        width=auto/></div>
+                                <div class="col-10">
+                                    <p class="block-name">
+                                        {{ technology.name }}
+                                    </p>
+                                    <p class="block-count">
+                                        {% for key,value in techonologiesWithProjectsCounted %}
+                                            {% if key == technology.id %}
+                                                Used id {{ value }} projects.
+                                            {% endif %}
+                                        {% endfor %}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </a>
