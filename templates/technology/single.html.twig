@@ -5,9 +5,31 @@
 {% block body %}
     <h1>{{ technology }}</h1>
 
-    <div><a href="{{ path('technologies_index') }}" class="button go-back"><i class="fa-solid fa-left-long left"></i> Go back</a></div>
+    <div><a href="{{ path('technologies_index') }}" class="button go-back"><i class="fa-solid fa-left-long left"></i> Go
+            back</a></div>
 
-    <img src="/uploads/tech/{{ technology.image }}" alt="{{ technology }}" height=200 width=auto />
+    <div class="container single">
+        <div class="row">
+            <div class="col-md-6 ">
+                <h2 class="block-name">
+                    {{ technology }}
+                </h2>
+                <p class="block-description">
+                    {{ technology.description }}
+                </p>
+                <p class="block-count">
+                    {% for key,value in techonologiesWithProjectsCounted %}
+                        {% if key == technology.id %}
+                            Used in <b>{{ value }}</b> project{% if value != 1 %}s{% endif %}.
+                        {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="col-md-6 ">
+                <div class="col-6"><img src="/uploads/tech/{{ technology.image }}"
+                                        alt="{{ technology }}" class="block-image"/></div>
+            </div>
+        </div>
+    </div>
 
-    <p>{{ technology.description }}</p>
 {% endblock %}

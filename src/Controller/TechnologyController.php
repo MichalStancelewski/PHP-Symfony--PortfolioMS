@@ -24,8 +24,8 @@ class TechnologyController extends AbstractController
         $technologiesCollection = $technologyRepository->findAll();
         $technologiesWithProjectsCounted = array();
         if (count($technologiesCollection) > 0) {
-            foreach ($technologiesCollection as $technology) {
-                $technologiesWithProjectsCounted[$technology->getId()] = $technology->countProjects();
+            foreach ($technologiesCollection as $tech) {
+                $technologiesWithProjectsCounted[$tech->getId()] = $tech->countProjects();
             }
         }
 
@@ -37,10 +37,19 @@ class TechnologyController extends AbstractController
     }
 
     #[Route('/technologies/{slug}/', name: 'technologies_single')]
-    public function single(Technology $technology): Response
+    public function single(Technology $technology, TechnologyRepository $technologyRepository): Response
     {
+        $technologiesCollection = $technologyRepository->findAll();
+        $technologiesWithProjectsCounted = array();
+        if (count($technologiesCollection) > 0) {
+            foreach ($technologiesCollection as $tech) {
+                $technologiesWithProjectsCounted[$tech->getId()] = $tech->countProjects();
+            }
+        }
+
         return new Response($this->twig->render('technology/single.html.twig', [
             'technology' => $technology,
+            'techonologiesWithProjectsCounted' => $technologiesWithProjectsCounted,
         ]));
     }
 
