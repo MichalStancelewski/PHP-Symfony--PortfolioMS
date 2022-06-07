@@ -223,10 +223,17 @@ a {
 }
 
 .aboutme-text b,
-.single .block-left {
+.single .block-left b {
   font-size: 15px;
   font-weight: 700;
   color: $color-text-lighter;
+}
+
+.aboutme-text li,
+.single .block-left li{
+  font-size: 15px;
+  font-weight: 400;
+  color: $color-text-darker;
 }
 
 .align-center {
