@@ -10,13 +10,14 @@
 
     <div class="container single">
         <div class="row">
-            <div class="col-md-6 ">
+            <div class="col-md-6 block-left">
                 <h2 class="block-name">
                     {{ technology }}
                 </h2>
                 <p class="block-description">
                     {{ technology.description }}
                 </p>
+                <hr/>
                 <p class="block-count">
                     {% for key,value in techonologiesWithProjectsCounted %}
                         {% if key == technology.id %}
@@ -25,9 +26,9 @@
                     {% endfor %}
                 </p>
             </div>
-            <div class="col-md-6 ">
-                <div class="col-6"><img src="/uploads/tech/{{ technology.image }}"
-                                        alt="{{ technology }}" class="block-image"/></div>
+            <div class="col-md-6 block-right">
+                <div class="block-image align-center"><img src="/uploads/tech/{{ technology.image }}"
+                                        alt="{{ technology }}" class="technology-image"/></div>
             </div>
         </div>
     </div>

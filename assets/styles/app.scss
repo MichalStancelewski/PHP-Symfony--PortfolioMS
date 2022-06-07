@@ -93,7 +93,8 @@ a {
 }
 
 .archive .single-block,
-.aboutme-box {
+.aboutme-box,
+.single .block-left {
   display: block;
   margin-bottom: 20px;
   padding: 20px;
@@ -109,7 +110,7 @@ a {
   box-shadow: $box-shadow-dark;
 }
 
-.archive img.block-image{
+.archive img.block-image {
   max-height: 50px;
   width: auto;
   padding: 3px;
@@ -117,15 +118,16 @@ a {
   border-radius: $border-radius;
 }
 
-.archive .single-block p{
+.archive .single-block p {
   margin: 0;
 }
 
-.archive .single-block .container.inside-block{
+.archive .single-block .container.inside-block {
   padding: 0;
 }
 
-.archive p.block-count{
+.archive p.block-count,
+.single p.block-count {
   margin-top: 5px;
   font-size: 12px;
   color: $color-text-darker;
@@ -133,9 +135,22 @@ a {
   letter-spacing: 0.7px;
 }
 
-.archive .block-count b{
+.archive .block-count b,
+.single .block-count b {
   font-weight: 700;
   color: $color-text-medium;
+}
+
+.single .block-name {
+  font-size: 22px;
+  padding: 5px 0;
+}
+
+.single img.technology-image {
+  max-height: 280px;
+  width: auto;
+  padding: 30px;
+  margin: 0 auto 20px auto;
 }
 
 .contact-box {
@@ -150,11 +165,11 @@ a {
   font-weight: 700;
 }
 
-.contact-box a{
+.contact-box a {
   color: $color-accent;
 }
 
-.contact-box a:hover{
+.contact-box a:hover {
   color: $color-accent-darker;
 }
 
@@ -162,12 +177,13 @@ a {
   margin-right: 6px;
 }
 
-.contact-box p {
+.contact-box p,
+.single .block-left {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.button{
+.button {
   display: block;
   max-width: 140px;
   margin-top: 10px;
@@ -179,39 +195,41 @@ a {
   color: $color-text-darker;
 }
 
-.button i.left{
+.button i.left {
   margin-right: 8px;
 }
 
-.button i.right{
+.button i.right {
   margin-left: 8px;
 }
 
-.button.go-back{
+.button.go-back {
   background-color: $color-alfa;
 }
 
-.button.go-back:hover{
+.button.go-back:hover {
   background-color: $color-accent;
   color: $color-text-lighter;
   border: 2px solid $color-accent;
   box-shadow: $box-shadow-dark;
 }
 
-.aboutme-text {
+.aboutme-text,
+.single .block-left p {
   font-size: 15px;
   font-weight: 400;
   text-align: justify;
   color: $color-text-darker;
 }
 
-.aboutme-text b{
+.aboutme-text b,
+.single .block-left {
   font-size: 15px;
   font-weight: 700;
   color: $color-text-lighter;
 }
 
-.contact-image {
+.align-center {
   text-align: center;
 }
 
