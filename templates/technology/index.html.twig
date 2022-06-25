@@ -10,29 +10,33 @@
 
     <div class="container archive">
         <div class="row">
-            {% for technology in technologies %}
-                <div class="col-lg-4 col-md-6 ">
-                    <a class="single-block" href="{{ path('technologies_single', { slug: technology.slug }) }}">
-                        <div class="container inside-block">
-                            <div class="row">
-                                <div class="col-3"><img src="/uploads/tech/{{ technology.image }}"
-                                                        alt="{{ technology }}" class="block-image" /></div>
-                                <div class="col-9">
-                                    <p class="block-name">
-                                        {{ technology.name }}
-                                    </p>
-                                    <p class="block-count">
-                                        {% for key,value in techonologiesWithProjectsCounted %}
-                                            {% if key == technology.id %}
-                                                Used in <b>{{ value }}</b> project{% if value != 1 %}s{% endif %}.
-                                            {% endif %}
-                                        {% endfor %}
-                                    </p>
+            {% for key,value in techonologiesWithProjectsCounted %}
+                {% for technology in technologies %}
+                    {% if key == technology.id %}
+                        <div class="col-lg-4 col-md-6 ">
+                            <a class="single-block" href="{{ path('technologies_single', { slug: technology.slug }) }}">
+                                <div class="container inside-block">
+                                    <div class="row">
+                                        <div class="col-3"><img src="/uploads/tech/{{ technology.image }}"
+                                                                alt="{{ technology }}" class="block-image"/></div>
+                                        <div class="col-9">
+                                            <p class="block-name">
+                                                {{ technology.name }}
+                                            </p>
+                                            <p class="block-count">
+                                                {% for key,value in techonologiesWithProjectsCounted %}
+                                                    {% if key == technology.id %}
+                                                        Used in <b>{{ value }}</b> project{% if value != 1 %}s{% endif %}.
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
         </div>
     </div>
