@@ -30,10 +30,11 @@ class ProjectController extends AbstractController
     }
 
     #[Route('/project/{slug}/', name: 'project')]
-    public function single(Project $project): Response
+    public function single(Project $project, TechnologyRepository $technologyRepository): Response
     {
         return new Response($this->twig->render('project/single.html.twig', [
             'project' => $project,
+            'technologies' => $technologyRepository->findAll(),
         ]));
     }
 

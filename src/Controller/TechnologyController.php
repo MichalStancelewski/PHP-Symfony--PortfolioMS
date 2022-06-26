@@ -28,7 +28,7 @@ class TechnologyController extends AbstractController
                 $technologiesWithProjectsCounted[$tech->getId()] = $tech->countProjects();
             }
         }
-       arsort($technologiesWithProjectsCounted);
+        arsort($technologiesWithProjectsCounted);
         return new Response($this->twig->render('technology/index.html.twig', [
             'technologies' => $technologiesCollection,
             'techonologiesWithProjectsCounted' => $technologiesWithProjectsCounted,

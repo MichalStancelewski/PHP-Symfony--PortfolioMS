@@ -26,6 +26,10 @@ a {
   background: $color-background-darker;
 }
 
+.position-relative{
+  position: relative;
+}
+
 .wrapper {
   display: flex;
   width: 100%;
@@ -248,6 +252,68 @@ a {
 
 img.shadow {
   filter: $drop-shadow-accent;
+}
+
+.block-techs{
+  margin-top: 5px;
+}
+
+hr.block-separator{
+  border-bottom: 1px solid $color-text-darker;
+  margin: 10px 0 5px 0;
+}
+
+.archive .project-link{
+  display: block;
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  color: $color-text-lighter;
+}
+
+.archive .project-link:hover{
+  transform: scale(1.5);
+  color: $color-accent;
+}
+
+.single .project-link a{
+  color: $color-text-lighter;
+}
+
+.single .project-link a:hover{
+  color: $color-accent;
+}
+
+.single .project-link i{
+  margin-right: 7px;
+}
+
+img.small-thumbnail{
+  border-radius: 100px !important;
+  max-width: 36px;
+  height: auto;
+  padding: 2px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: $color-text-lighter;
+}
+
+img.medium-thumbnail{
+  border-radius: 100px !important;
+  max-width: 72px;
+  height: auto;
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 10px;
+  background-color: $color-text-lighter;
+  transition: 0.3s;
+}
+img.medium-thumbnail:hover{
+  transform: scale(1.1);
+}
+
+.single .block-techs{
+  padding: 20px;
 }
 
 @media only screen and (max-width: 767px) {

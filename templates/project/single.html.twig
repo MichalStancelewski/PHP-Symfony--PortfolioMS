@@ -5,15 +5,43 @@
 {% block body %}
     <h1>{{ project }}</h1>
 
-    <p>{{ project.description }}</p>
+    <div><a href="{{ path('homepage') }}" class="button go-back"><i class="fa-solid fa-left-long left"></i> Go
+            back</a></div>
 
-    <h2>Technologies used:</h2>
-    {% if project.technologies|length > 0 %}
-        {% for technology in project.technologies %}
-            <p>{{ technology }}</p>
-        {% endfor %}
-    {% else %}
-        <p>No additional information provided.</p>
-    {% endif %}
+    <div class="container single">
+        <div class="row">
+            <div class="col-md-8 block-left">
+                <h2 class="block-name">
+                    {{ project }}
+                </h2>
+                <p class="block-description">
+                    {{ project.description | raw }}
+                </p>
+                <hr/>
+                <p class="project-link">
+                    <i class="fa-solid fa-desktop"></i> <a href="https://{{ project.link }}" target="_blank" rel="nofollow,noopener" class="project-link">
+                        {{ project.link }}
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-4 block-right">
+                <div class="block-techs">
+                    <h2 class="block-name">
+                        Used technologies:
+                    </h2>
+                    {% for projectTech in project.technologies %}
+                        {% for technology in technologies %}
+                            {% if projectTech.id == technology.id %}
+                                <a href="{{ path('technologies_single', { slug: technology.slug }) }}">
+                                    <img src="/uploads/tech/{{ technology.image }}"
+                                         alt="{{ technology }}" class="block-image medium-thumbnail"/>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
