@@ -40,6 +40,7 @@ class ProjectCrudController extends AbstractCrudController
         yield TextareaField::new('description')
             ->hideOnIndex();
         yield TextField::new('link');
+        yield TextField::new('gitLink');
     }
 
 }

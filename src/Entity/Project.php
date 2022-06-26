@@ -33,6 +33,9 @@ class Project
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     private $slug;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $gitLink;
+
     public function __construct()
     {
         $this->technologies = new ArrayCollection();
@@ -125,6 +128,18 @@ class Project
         if (!$this->slug || '-' === $this->slug) {
             $this->slug = (string) $slugger->slug((string) $this)->lower();
         }
+    }
+
+    public function getGitLink(): ?string
+    {
+        return $this->gitLink;
+    }
+
+    public function setGitLink(?string $gitLink): self
+    {
+        $this->gitLink = $gitLink;
+
+        return $this;
     }
 
 }

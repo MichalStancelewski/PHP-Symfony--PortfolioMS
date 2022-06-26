@@ -3,12 +3,13 @@
 {% block title %}Projects{% endblock %}
 
 {% block body %}
-
-    <h1>Projects</h1>
-
-    <h2>List of my projects</h2>
-
     <div class="container archive">
+        <div class="row">
+            <h1>All projects</h1>
+        </div>
+        <div class="row">
+            <h2>List of my projects</h2>
+        </div>
         <div class="row">
             {% for project in projects %}
                 <div class="col-lg-4 col-md-6 position-relative">
@@ -41,7 +42,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="https://{{ project.link }}" target="_blank" rel="nofollow,noopener" class="project-link">
+                    <a href="{{ project.link }}" target="_blank" rel="nofollow,noopener" class="project-link" title="{{ project.link }}">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>

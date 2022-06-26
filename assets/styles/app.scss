@@ -9,6 +9,22 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-title-primary;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: calc(1.200rem + 1.3vw);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: calc(0.800rem + 0.5vw);
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: calc(0.600rem + 0.2vw);
+  margin-bottom: 12px;
 }
 
 a {
@@ -26,7 +42,7 @@ a {
   background: $color-background-darker;
 }
 
-.position-relative{
+.position-relative {
   position: relative;
 }
 
@@ -185,6 +201,8 @@ a {
 .single .block-left {
   margin-top: 15px;
   margin-bottom: 15px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .button {
@@ -234,7 +252,7 @@ a {
 }
 
 .aboutme-text li,
-.single .block-left li{
+.single .block-left li {
   font-size: 15px;
   font-weight: 400;
   color: $color-text-darker;
@@ -254,16 +272,16 @@ img.shadow {
   filter: $drop-shadow-accent;
 }
 
-.block-techs{
+.block-techs {
   margin-top: 5px;
 }
 
-hr.block-separator{
+hr.block-separator {
   border-bottom: 1px solid $color-text-darker;
   margin: 10px 0 5px 0;
 }
 
-.archive .project-link{
+.archive .project-link {
   display: block;
   position: absolute;
   top: 18px;
@@ -271,24 +289,24 @@ hr.block-separator{
   color: $color-text-lighter;
 }
 
-.archive .project-link:hover{
+.archive .project-link:hover {
   transform: scale(1.5);
   color: $color-accent;
 }
 
-.single .project-link a{
+.single .project-link a {
   color: $color-text-lighter;
 }
 
-.single .project-link a:hover{
+.single .project-link a:hover {
   color: $color-accent;
 }
 
-.single .project-link i{
+.single .project-link i {
   margin-right: 7px;
 }
 
-img.small-thumbnail{
+img.small-thumbnail {
   border-radius: 100px !important;
   max-width: 36px;
   height: auto;
@@ -298,9 +316,9 @@ img.small-thumbnail{
   background-color: $color-text-lighter;
 }
 
-img.medium-thumbnail{
+img.medium-thumbnail {
   border-radius: 100px !important;
-  max-width: 72px;
+  max-width: 52px;
   height: auto;
   padding: 5px;
   margin-top: 5px;
@@ -308,11 +326,12 @@ img.medium-thumbnail{
   background-color: $color-text-lighter;
   transition: 0.3s;
 }
-img.medium-thumbnail:hover{
+
+img.medium-thumbnail:hover {
   transform: scale(1.1);
 }
 
-.single .block-techs{
+.single .block-techs {
   padding: 20px;
 }
 

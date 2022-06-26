@@ -3,12 +3,14 @@
 {% block title %}Technology details - {{ technology }}{% endblock %}
 
 {% block body %}
-    <h1>{{ technology }}</h1>
-
-    <div><a href="{{ path('technologies_index') }}" class="button go-back"><i class="fa-solid fa-left-long left"></i> Go
-            back</a></div>
-
     <div class="container single">
+        <div class="row">
+            <h1>{{ technology }}</h1>
+        </div>
+        <div class="row">
+            <div><a href="{{ path('technologies_index') }}" class="button go-back"><i class="fa-solid fa-left-long left"></i> Go
+                back</a></div>
+        </div>
         <div class="row">
             <div class="col-md-6 block-left">
                 <h2 class="block-name">
@@ -26,7 +28,7 @@
                     {% endfor %}
                 </p>
             </div>
-            <div class="col-md-6 block-right">
+            <div class="col-md-5 block-right">
                 <div class="block-image align-center"><img src="/uploads/tech/{{ technology.image }}"
                                         alt="{{ technology }}" class="technology-image"/></div>
             </div>

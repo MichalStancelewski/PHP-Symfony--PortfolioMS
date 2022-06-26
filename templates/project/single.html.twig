@@ -3,12 +3,14 @@
 {% block title %}Project details - {{ project }}{% endblock %}
 
 {% block body %}
-    <h1>{{ project }}</h1>
-
-    <div><a href="{{ path('homepage') }}" class="button go-back"><i class="fa-solid fa-left-long left"></i> Go
-            back</a></div>
-
     <div class="container single">
+        <div class="row">
+            <h1>{{ project }}</h1>
+        </div>
+        <div class="row">
+            <div><a href="{{ path('homepage') }}" class="button go-back"><i class="fa-solid fa-left-long left"></i> Go
+                    back</a></div>
+        </div>
         <div class="row">
             <div class="col-md-8 block-left">
                 <h2 class="block-name">
@@ -18,13 +20,28 @@
                     {{ project.description | raw }}
                 </p>
                 <hr/>
-                <p class="project-link">
-                    <i class="fa-solid fa-desktop"></i> <a href="https://{{ project.link }}" target="_blank" rel="nofollow,noopener" class="project-link">
-                        {{ project.link }}
-                    </a>
-                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="project-link">
+                            <i class="fa-solid fa-desktop"></i> <a href="{{ project.link }}" target="_blank"
+                                                                   rel="nofollow,noopener" class="project-link"
+                                                                   title="{{ project.link }}">
+                                {{ project.link }}
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="project-link">
+                            <i class="fa-brands fa-github"></i> <a href="{{ project.gitLink }}" target="_blank"
+                                                                   rel="nofollow,noopener" class="project-link"
+                                                                   title="{{ project.gitLink }}">
+                                {{ project.gitLink[0:30] }}...
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 block-right">
+            <div class="col-md-3 block-right">
                 <div class="block-techs">
                     <h2 class="block-name">
                         Used technologies:
@@ -43,5 +60,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
