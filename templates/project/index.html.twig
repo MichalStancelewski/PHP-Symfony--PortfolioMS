@@ -42,7 +42,13 @@
                             </div>
                         </div>
                     </a>
-                    <a href="{{ project.link }}" target="_blank" rel="nofollow,noopener" class="project-link" title="{{ project.link }}">
+                    <a href="
+                     {% if project.link starts with 'http' %}
+                        {{ project.link }}
+                     {% else %}
+                        https://{{ project.link }}
+                     {% endif %}
+                    " target="_blank" rel="nofollow,noopener" class="project-link" title="{{ project.link }}">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
