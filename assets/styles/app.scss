@@ -53,6 +53,12 @@ a {
   position: relative;
 }
 
+.site-logo{
+  width: 32px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
 .wrapper {
   display: flex;
   width: 100%;
@@ -94,7 +100,7 @@ a {
 }
 
 .sidebar-header a {
-  color: $color-text-darker;
+  color: $color-text-lighter;
   font-size: 28px;
   font-weight: 700;
 }
