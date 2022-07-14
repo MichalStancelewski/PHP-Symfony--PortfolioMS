@@ -38,6 +38,7 @@
                     </div>
                     <div class="col-md-6">
                         <p class="project-link">
+                            {% if project.link is not null %}
                             <i class="fa-brands fa-github"></i> <a href="
                                                                 {% if project.link starts with 'http' %}
                                                                     {{ project.gitLink }}
@@ -49,6 +50,7 @@
                                                                    title="{{ project.gitLink }}">
                                 {{ project.gitLink[0:30] }}...
                             </a>
+                            {% endif %}
                         </p>
                     </div>
                 </div>
