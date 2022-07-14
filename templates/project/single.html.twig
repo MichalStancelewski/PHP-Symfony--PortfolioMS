@@ -23,24 +23,26 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p class="project-link">
+                            {% if project.link is not null %}
                             <i class="fa-solid fa-desktop"></i> <a href="
                                                                  {% if project.link starts with 'http' %}
                                                                     {{ project.link }}
                                                                  {% else %}
-                                                                    https://{{ project.link }}
+                                                                    http://{{ project.link }}
                                                                  {% endif %}
                                                                 "target="_blank"
                                                                    rel="nofollow,noopener" class="project-link"
                                                                    title="{{ project.link }}">
                                 {{ project.link }}
                             </a>
+                            {% endif %}
                         </p>
                     </div>
                     <div class="col-md-6">
                         <p class="project-link">
                             {% if project.gitLink is not null %}
                             <i class="fa-brands fa-github"></i> <a href="
-                                                                {% if project.link starts with 'http' %}
+                                                                {% if project.gitLink starts with 'http' %}
                                                                     {{ project.gitLink }}
                                                                 {% else %}
                                                                     https://{{ project.gitLink }}
