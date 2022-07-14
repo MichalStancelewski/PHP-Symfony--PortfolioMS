@@ -36,6 +36,8 @@ class ProjectCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield TextField::new('name');
+        yield TextField::new('slug')
+            ->onlyWhenUpdating();
         yield AssociationField::new('technologies');
         yield TextareaField::new('description')
             ->hideOnIndex();
